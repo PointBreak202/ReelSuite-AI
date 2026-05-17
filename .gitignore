@@ -1,0 +1,5 @@
+test reel/
+__pycache__/
+config.py
+done.txt
+ffmpeg_command.txt
