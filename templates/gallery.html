@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Gallery - AI Reel Generator{% endblock %}
+{% block title %}Gallery — ReelSuite AI{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/gallery.css') }}">
@@ -8,12 +8,42 @@
 
 {% block content %}
 <div class="container gallery-container">
-    <h1 class="gallery-title">Reel Gallery</h1>
-    <div class="gallery-grid">
-        {% for reel in reels %}
-        <video src="/static/reels/{{reel}}" controls></video>
+    <div class="gallery-header animate-on-scroll">
+        <h1 class="gallery-title gradient-text">Reel Gallery</h1>
+        <p class="gallery-subtitle">Browse your generated reels</p>
+    </div>
 
-        {% endfor %}
+    <div class="gallery-grid">
+        {% if reels %}
+            {% for reel in reels %}
+            <div class="reel-card animate-on-scroll delay-{{ loop.index if loop.index <= 5 else 5 }}">
+                <div class="reel-video-wrapper">
+                    <video src="/static/reels/{{reel}}" controls preload="metadata"></video>
+                    <div class="reel-overlay">
+                        <div class="reel-play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="reel-info">
+                    <span class="reel-info-label">{{ reel }}</span>
+                    <i class="fas fa-film reel-info-icon"></i>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="gallery-empty animate-on-scroll">
+                <div class="gallery-empty-icon">
+                    <i class="fas fa-video-slash"></i>
+                </div>
+                <h3>No reels yet</h3>
+                <p>Create your first AI-generated reel to see it here</p>
+                <a href="/create" class="gallery-empty-btn">
+                    Create a Reel
+                    <span>→</span>
+                </a>
+            </div>
+        {% endif %}
     </div>
 </div>
-{% endblock %} 
+{% endblock %}

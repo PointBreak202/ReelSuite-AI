@@ -1,38 +1,60 @@
 {% extends "base.html" %}
 
-{% block title %}AI Reel Generator - Create Amazing Instagram Reels{% endblock %}
+{% block title %}ReelSuite AI — Create Amazing Reels with AI{% endblock %}
 
 {% block content %}
 <section class="hero-section">
-    <div class="container">
-        <h1 class="hero-title">Create Amazing Instagram Reels with AI</h1>
-        <p class="hero-subtitle">Transform your videos into engaging reels with our AI-powered platform</p>
-        <a href="/create" class="cta-button">Start Creating Now</a>
+    <div class="hero-glow-orb"></div>
+    <div class="container hero-content">
+        <div class="hero-badge animate-on-scroll">
+            <span class="badge-dot"></span>
+            AI-Powered Reel Creator
+        </div>
+        <h1 class="hero-title animate-on-scroll delay-1">
+            Create Stunning Reels with <span class="highlight">AI Magic</span>
+        </h1>
+        <p class="hero-subtitle animate-on-scroll delay-2">
+            Upload your images, write a script, and let AI generate a narrated short-form video reel — in seconds.
+        </p>
+        <a href="/create" class="cta-button animate-on-scroll delay-3">
+            Start Creating
+            <span class="btn-arrow">→</span>
+        </a>
     </div>
 </section>
 
 <section class="features-section">
     <div class="container">
+        <div class="section-header animate-on-scroll">
+            <h2 class="gradient-text">How It Works</h2>
+            <p>Three simple steps to create your next viral reel</p>
+        </div>
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="feature-card">
-                    <i class="fas fa-magic feature-icon"></i>
-                    <h3>AI-Powered Editing</h3>
-                    <p>Let our AI analyze and enhance your videos automatically</p>
+                <div class="feature-card animate-on-scroll delay-1">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-cloud-upload-alt feature-icon"></i>
+                    </div>
+                    <h3>Upload Images</h3>
+                    <p>Upload your photos and they'll be stitched together into a smooth video sequence</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="feature-card">
-                    <i class="fas fa-film feature-icon"></i>
-                    <h3>Smart Stitching</h3>
-                    <p>Seamlessly combine multiple clips into perfect reels</p>
+                <div class="feature-card animate-on-scroll delay-2">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-pen-fancy feature-icon"></i>
+                    </div>
+                    <h3>Write Your Script</h3>
+                    <p>Add your narration script and our AI will generate a natural voiceover using ElevenLabs</p>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="feature-card">
-                    <i class="fas fa-music feature-icon"></i>
-                    <h3>Music Integration</h3>
-                    <p>Add trending music and sound effects to your reels</p>
+                <div class="feature-card animate-on-scroll delay-3">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-magic feature-icon"></i>
+                    </div>
+                    <h3>AI Generates</h3>
+                    <p>Sit back while AI combines everything into a polished, ready-to-share reel</p>
                 </div>
             </div>
         </div>
@@ -41,15 +63,29 @@
 
 <section class="showcase-section">
     <div class="container">
-        <h2 class="showcase-title">Featured Creations</h2>
+        <h2 class="showcase-title gradient-text animate-on-scroll">Featured Creations</h2>
         <div class="image-grid">
-            <img src="{{ url_for('static', filename='1.jpg') }}" alt="Reel Example 1" class="showcase-image">
-            <img src="{{ url_for('static', filename='2.jpg') }}" alt="Reel Example 2" class="showcase-image">
-            <img src="{{ url_for('static', filename='3.jpg') }}" alt="Reel Example 3" class="showcase-image">
-            <img src="{{ url_for('static', filename='4.jpg') }}" alt="Reel Example 4" class="showcase-image">
-            <img src="{{ url_for('static', filename='5.jpg') }}" alt="Reel Example 5" class="showcase-image">
+            <div class="showcase-image-wrapper animate-on-scroll delay-1">
+                <img src="{{ url_for('static', filename='1.jpg') }}" alt="AI Generated Reel Example" class="showcase-image">
+                <div class="showcase-image-overlay"></div>
+            </div>
+            <div class="showcase-image-wrapper animate-on-scroll delay-2">
+                <img src="{{ url_for('static', filename='2.jpg') }}" alt="AI Generated Reel Example" class="showcase-image">
+                <div class="showcase-image-overlay"></div>
+            </div>
+            <div class="showcase-image-wrapper animate-on-scroll delay-3">
+                <img src="{{ url_for('static', filename='3.jpg') }}" alt="AI Generated Reel Example" class="showcase-image">
+                <div class="showcase-image-overlay"></div>
+            </div>
+            <div class="showcase-image-wrapper animate-on-scroll delay-4">
+                <img src="{{ url_for('static', filename='4.jpg') }}" alt="AI Generated Reel Example" class="showcase-image">
+                <div class="showcase-image-overlay"></div>
+            </div>
+            <div class="showcase-image-wrapper animate-on-scroll delay-5">
+                <img src="{{ url_for('static', filename='5.jpg') }}" alt="AI Generated Reel Example" class="showcase-image">
+                <div class="showcase-image-overlay"></div>
+            </div>
         </div>
     </div>
 </section>
 {% endblock %}
- 
